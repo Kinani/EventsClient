@@ -1,0 +1,95 @@
+﻿<Page
+    x:Class="DXEventsAPP.View.Events_Details_Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DXEventsAPP.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    
+    <Page.Resources>
+        <local:SessionNameConverter x:Key="SessionNameConverter"/>
+        <local:SessionStartTimeConverter x:Key="SessionStartTimeConverter"/>
+        <local:SessionEndTimeConverter x:Key="SessionEndTimeConverter"/>
+        <local:SessionSpeakerConverter x:Key="SessionSpeakerConverter"/>
+    </Page.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Pivot Grid.Row="1" Background="#ECECEC">
+            <PivotItem  Foreground="Black">
+                <PivotItem.Header>
+                    <TextBlock Text="Description" Foreground="Black" FontSize="25" FontFamily="{StaticResource  PivotHeaderItemFontFamily }"/>
+                </PivotItem.Header>
+                <ScrollViewer Margin="0,12,-12,0" HorizontalContentAlignment="Left" VerticalScrollBarVisibility="Auto">
+                    <!--<ListView x:Name="myDescriptionListView"
+                  IsItemClickEnabled="False">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">-->
+                                    <TextBlock x:Name="EventDescriptionTxtBlock" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="{StaticResource PivotHeaderItemFontFamily }" FontSize="20" TextWrapping="WrapWholeWords" ></TextBlock>
+                                <!--</StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>-->
+                </ScrollViewer>
+            </PivotItem>
+            <PivotItem  Padding="0"  Foreground="Black">
+                <PivotItem.Header>
+                    <TextBlock Text="Agenda" Foreground="Black" FontSize="25" FontFamily="{StaticResource  PivotHeaderItemFontFamily }"/>
+                </PivotItem.Header>
+                <ScrollViewer Margin="0,0,-12,0" VerticalScrollBarVisibility="Auto">
+                    <ListView x:Name="myAgendaListView"
+                  IsItemClickEnabled="False">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <!--TODO [Saqer] Highly important to get this agenda right, tyyy :)-->
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="SessionNameTextBlock" Foreground="Black" FontSize="20" Text="{Binding sessionname, Converter={StaticResource SessionNameConverter}}"/>
+                                    <TextBlock x:Name="SessionTimeTextBlock"  Foreground="Black" FontSize="15" Text="{Binding sessiontime, Converter={StaticResource SessionStartTimeConverter}}"/>
+                                    <TextBlock x:Name="SessionEndTimeTextBlock" Foreground="Black" FontSize="15" Text="{Binding endtime, Converter={StaticResource SessionEndTimeConverter}}"/>
+                                    <TextBlock x:Name="SessionSpeakerTextBlock" Foreground="Black" FontSize="15" Text="{Binding speaker, Converter={StaticResource SessionSpeakerConverter}}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollViewer>
+            </PivotItem>
+            <PivotItem Foreground="Black">
+                <PivotItem.Header>
+                    <TextBlock Text="Speakers" Foreground="Black" FontSize="25" FontFamily="{StaticResource  PivotHeaderItemFontFamily }"/>
+                </PivotItem.Header>
+                <ScrollViewer Margin="0,0,-12,0" VerticalScrollBarVisibility="Auto">
+                    <ListView x:Name="mySpeakersListView"
+                  IsItemClickEnabled="False">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="SessionSpeakerTextBlock" Foreground="Black" FontSize="20" Text="{Binding speaker}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollViewer>
+            </PivotItem>
+            <!--<PivotItem Header="Feedback">
+                <ScrollViewer Margin="0,0,-12,0" VerticalScrollBarVisibility="Auto">
+                    <TextBlock Margin="0,12,24,12" LineHeight="24" TextWrapping="Wrap">
+                        --><!--Yet to decision whta to do here :((  --><!--
+
+                    </TextBlock>
+                </ScrollViewer>
+            </PivotItem>-->
+        </Pivot>
+        <AppBar Grid.Row="2"  ClosedDisplayMode="Compact" Foreground="White">
+            <AppBarButton x:Name="RegisterAppBarBtn" FontSize="35" IsCompact="True" Label="Register" Icon="Link" HorizontalAlignment="Center" Content="Registertion" Visibility="Visible" Foreground="White" Click="RegisterAppBarBtn_Click"/>
+        </AppBar>
+
+    </Grid>
+</Page>

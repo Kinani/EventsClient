@@ -1,0 +1,76 @@
+﻿<Page
+    x:Class="DXEventsAPP.View.Register_User_Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DXEventsAPP.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--<Grid Background="White" >
+        --><!--TODO : Get this xaml beautiful plz :))--><!--
+        <Grid.RowDefinitions>
+            --><!--<RowDefinition Height="200"/>--><!--
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer>
+            <StackPanel Grid.Row="0" Orientation="Vertical" Margin="10,20,0,0" HorizontalAlignment="Left" Width="350">
+            <TextBox x:Name="userName"  Header="Name"/>
+            <TextBlock Text="Gender" Foreground="White" />
+            <RadioButton x:Name="RadioBtnMale" Content="Male"/>
+            <RadioButton x:Name="RadioBtnFemale" Content="Female" />
+            <TextBox x:Name="userEmail"  Header="Email" Margin="0,20,0,0"/>
+                <DatePicker x:Name="userDatePicker"  Header="Date of Birth" Margin="0,20,0,0" DateChanged="userDatePicker_DateChanged"/>
+            --><!--<TextBox x:Name="userDob" Header="Date of Birth" Margin="20,10,849,10" Tapped="userDob_Tapped"/>--><!--
+                <TextBox x:Name="userCompany" Header="Company" Margin="0,20,0,0"/>
+                <ProgressBar x:Name="LoadingProgressBar" Grid.Row="0" Margin="0,60,0,0" IsEnabled="True" Width="300"  IsIndeterminate="False" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        </ScrollViewer>
+        <AppBar x:Name="myAppBar" Grid.Row="2" Background="#0071BB" ClosedDisplayMode="Compact">
+            <AppBarButton x:Name="AcceptAppBarBtn" FontSize="35" IsCompact="True" Icon="Accept" HorizontalAlignment="Center" Visibility="Visible" Foreground="Black" Click="AcceptAppBarBtn_Click"/>
+
+        </AppBar>
+
+
+    </Grid>-->
+    <Grid Background="#1f1f1f">
+        <!--TODO : Get this xaml beautiful plz :))-->
+        <Grid.RowDefinitions>
+            <!--<RowDefinition Height="200"/>-->
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Border Background="#1f1f1f" Grid.Row="0">
+            <TextBlock Text="Register Now" FontWeight="Bold" Margin="0,10,0,0" Foreground="#16a085" FontFamily="Arial" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"/>
+        </Border>
+        <StackPanel Grid.Row="1" Margin="10,-80,10,10" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBox x:Name="userName" Margin="0,0,0,0" PlaceholderText="Name: " Foreground="#1f1f1f" Width="350"/>
+            <TextBlock Text=""/>
+            <StackPanel Orientation="Vertical" Background="#FF797979" Width="350">
+                <TextBlock Text="Gender" Foreground="#1f1f1f" VerticalAlignment="Center"/>
+                <RadioButton Foreground="#1f1f1f" x:Name="RadioBtnMale" Content="Male" />
+                <RadioButton Foreground="#1f1f1f" x:Name="RadioBtnFemale" Content="Female" />
+            </StackPanel>
+            <TextBlock Text=""/>
+            <TextBox x:Name="userEmail" PlaceholderText="Email: " Foreground="#1f1f1f" Width="350" Margin="0,0,0,0"/>
+            <TextBlock Text=""/>
+            <StackPanel Orientation="Vertical" Background="#FF797979" Width="350">
+                <TextBlock Text="Birthday" Foreground="#1f1f1f" VerticalAlignment="Center"/>
+                <DatePicker x:Name="userDatePicker" Foreground="#1f1f1f" Margin="14,0,0,0" DateChanged="userDatePicker_DateChanged"/>
+            </StackPanel>
+            <!--<TextBox x:Name="userDob" Header="Date of Birth" Margin="20,10,849,10" Tapped="userDob_Tapped"/>-->
+            <TextBlock Text=""/>
+            <TextBox x:Name="userCompany" Width="350" Foreground="#1f1f1f" Margin="0,0,0,0" PlaceholderText="Company:"/>
+            <ProgressBar x:Name="LoadingProgressBar" Margin="0,60,0,0" IsEnabled="True" Width="300"  IsIndeterminate="False" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <AppBar x:Name="myAppBar" Grid.Row="3" Background="#16a085" ClosedDisplayMode="Compact">
+            <AppBarButton x:Name="AcceptAppBarBtn" FontSize="35" IsCompact="True" Icon="Accept" HorizontalAlignment="Center" Visibility="Visible" Foreground="Black" Click="AcceptAppBarBtn_Click"/>
+
+        </AppBar>
+
+
+    </Grid>
+
+</Page>

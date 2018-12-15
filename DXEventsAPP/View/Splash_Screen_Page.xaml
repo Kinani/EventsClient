@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="DXEventsAPP.View.Splash_Screen_Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DXEventsAPP.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#1d1f20">
+
+        <StackPanel x:Name="splash">
+            <Image x:Name="extendedSplashImage" Source="Assets/SplashScreen.png" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <ProgressRing IsActive="True" Visibility="Visible" x:Name="progress" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="100" Foreground="White"/>
+        </StackPanel>
+    </Grid>
+</Page>

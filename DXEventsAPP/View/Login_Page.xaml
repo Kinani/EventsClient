@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="DXEventsAPP.View.Login_Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DXEventsAPP.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+    mc:Ignorable="d">
+
+    <Grid Background="#1f1f1f">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" x:Name="extendedSplashImage" Source="ms-appx:///Assets/SplashScreen.png" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ProgressRing Grid.Row="2" IsActive="False" Visibility="Collapsed" x:Name="progress" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="100" Foreground="White"/>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <TextBox x:Name="UserEmail"  PlaceholderText="Email:" Margin="0,20,0,0"/>
+            <TextBlock Text=""/>
+            <!--<TextBox PlaceholderText="Password: "/>
+            <TextBlock Text=""/>-->
+            <Button x:Name="LoginBtn" Content="Login" Foreground="#ECECEC" Margin="10" Background="#16a085" Width="300" HorizontalAlignment="Center" Click="LoginBtn_Click" Canvas.ZIndex="-10"/>
+            <TextBlock Text=""/>
+            <Button x:Name="CreatNewAccBtn" Content="Create new account" Background="Transparent" Foreground="#FF797979" Width="150" HorizontalAlignment="Center" Click="CreatNewAccBtn_Click"/>
+            <TextBlock Text=""/>
+        </StackPanel>
+    </Grid>
+
+</Page>

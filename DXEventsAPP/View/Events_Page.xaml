@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="DXEventsAPP.View.Events_Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DXEventsAPP.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <local:EventNameConverter x:Key="EventNameConverter"/>
+        <local:EventDateConverter x:Key="EventDateConverter"/>
+        <local:EventPlaceConverter x:Key="EventPlaceConverter"/>
+    </Page.Resources>
+    <Grid Background="#ECECEC">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ProgressBar x:Name="LoadingProgressBar" Foreground="Blue" Grid.Row="0" Margin="0,20,0,0" IsEnabled="True" Width="300"  IsIndeterminate="True" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <ListView x:Name="myListView" Grid.Row="1" Margin="0,20,0,0"
+                  ItemClick="myListView_ItemClick"
+                  IsItemClickEnabled="True"
+                  SelectionMode="Single">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    
+                    <!--TODO [Saqer] Get this template done :)-->
+                    <StackPanel Orientation="Vertical">
+                        <!--<TextBlock x:Name="SomeShitPlaceHolder" FontSize="20" Text="{Binding eventname}"/>
+                        <TextBlock x:Name="EventPlaceTxtBlock" FontSize="15" Text="{Binding eventplace}"/>
+                        <TextBlock x:Name="EventDateTxtBlock" FontSize="15" Text="{Binding eventdate}"/>-->
+                            <TextBlock x:Name="SomeShitPlaceHolder" Foreground="Black" FontSize="20" Text="{Binding eventname, Converter={StaticResource EventNameConverter}}"/>
+                            <TextBlock x:Name="EventPlaceTxtBlock" Foreground="Black" FontSize="15" Text="{Binding eventplace, Converter={StaticResource EventPlaceConverter}}"/>
+                            <TextBlock x:Name="EventDateTxtBlock" Foreground="Black" FontSize="15" Text="{Binding eventdate, Converter={StaticResource EventDateConverter}}"/>
+
+                        </StackPanel>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
